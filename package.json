@@ -1,0 +1,19 @@
+{
+  "name": "munin-db",
+  "version": "0.1.0",
+  "description": "A munin db requesting tool using rrdtool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marc-Olivier Laux",
+  "license": "ISC",
+  "dependencies": {
+    "dateformat": "^2.0.0",
+    "fs": "0.0.1-security",
+    "merge": "^1.2.0",
+    "printf": "^0.2.5",
+    "rrdtool": "^0.1.0",
+    "strtotime": "^1.0.0"
+  }
+}
