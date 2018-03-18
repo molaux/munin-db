@@ -1,1 +1,1 @@
-module.exports = require('./lib/munin');
+module.exports = require('./lib/munin')
