@@ -1,0 +1,10 @@
+cd /var/lib/munin/DOMAIN
+
+# Threshold to new max configured in plugin PLUGIN
+perl -ne 'next unless /:PLUGIN/; if (/.*;(\S+):(\S+)\.(\S+)\.max\s+(\d+)/) {foreach (glob "$1-$2-$3-?.rrd") {print qq{File: $_\tMax: $4\n};qx{rrdtool tune $_ -a 42:$4};qx{rrdtool dump $_ > /tmp/rrdtool-xml};qx{mv $_ $_.bak};qx{rrdtool restore -r /tmp/rrdtool-xml $_};qx{chown munin:munin $_}}}' ../datafile
+
+# Threshold to new min configured in plugin PLUGIN
+perl -ne 'next unless /:PLUGIN/; if (/.*;(\S+):(\S+)\.(\S+)\.min\s+(-?\d+)/) {foreach (glob "$1-$2-$3-?.rrd") {print qq{File: $_\tMin: $4\n};qx{rrdtool tune $_ -i 42:$4};qx{rrdtool dump $_ > /tmp/rrdtool-xml};qx{mv $_ $_.bak};qx{rrdtool restore -r /tmp/rrdtool-xml $_};qx{chown munin:munin $_}}}' ../datafile
+
+# threshold PLUGIN to MAX
+perl -ne 'next unless /:PLUGIN/; if (/.*;(\S+):(\S+)\.(\S+)\.max\s+(\d+)/) {foreach (glob "$1-$2-$3-?.rrd") {print qq{File: $_\tMax: $4\n};qx{rrdtool tune $_ -a 42:MAX};qx{rrdtool dump $_ > /tmp/rrdtool-xml};qx{mv $_ $_.bak};qx{rrdtool restore -r /tmp/rrdtool-xml $_};qx{chown munin:munin $_}}}' ../datafile
