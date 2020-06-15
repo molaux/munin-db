@@ -3,12 +3,12 @@
     "name": "Marc-Olivier Laux"
   },
   "dependencies": {
-    "dateformat": "^2.0.0",
-    "fs": "0.0.1-security",
+    "dateformat": "^3.0.3",
+    "fs": "0.0.2",
     "locutus": "^2.0.10",
-    "merge": "^1.2.0",
-    "printf": "^0.2.5",
-    "rrdtool": "^0.1.0",
+    "merge": "^1.2.1",
+    "printf": "^0.5.1",
+    "rrdtool": "^0.1.1",
     "strtotime": "^1.0.0"
   },
   "description": "A munin db requesting tool using rrdtool",
