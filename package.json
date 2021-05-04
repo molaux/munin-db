@@ -6,7 +6,7 @@
     "dateformat": "^3.0.3",
     "fs": "0.0.2",
     "locutus": "^2.0.10",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "printf": "^0.6.1",
     "rrdtool": "^0.1.1",
     "strtotime": "^1.0.0"
